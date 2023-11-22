@@ -58,8 +58,3 @@ feature_table = fs.create_table(
 
 # Write the DataFrame to the Feature Store table
 fs.write_table(df=df_spark.to_spark(), name=f'default.dbdemos_mlops_features', mode='overwrite')
-
-# COMMAND ----------
-
-force_refresh = dbutils.widgets.get("force_refresh_automl") == "true"
-display_automl_churn_link(f'{dbName}.dbdemos_mlops_features', force_refresh = force_refresh)
