@@ -10,17 +10,6 @@
 
 # COMMAND ----------
 
-model_name = dbutils.widgets.get("dbdemos_mlops")
-
-trigger_job =json.dump({
-    "model_name" :
-
-}
-})
-
-
-# COMMAND ----------
-
 #DEMO SETUP
 #For this demo, the job is programatically created if it doesn't exist. See ./_resources/API_Helpers for more details
 job_id = get_staging_job_id()
