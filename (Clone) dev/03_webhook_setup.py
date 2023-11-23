@@ -88,7 +88,7 @@ TOKEN = 'dapia7ea79e2d7c1aba7e19826b75ce384c2-3'
 DOGFOOD_URL = 'https://adb-8979854987478940.0.azuredatabricks.net'
 model_name = 'mlops_demo_predict_stu_per'
 job_id = 898125460839212 # INSERT ID OF PRE-DEFINED JOB
-slack_url = 'https://hooks.slack.com/services/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' # can also use custom URL endpoint here
+slack_url = 'https://hooks.slack.com/services/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' # can also use custom URL endpoint here
 
 # COMMAND ----------
 
@@ -168,13 +168,13 @@ def mlflow_call_endpoint(endpoint, method, body='{}'):
 # COMMAND ----------
 
 # Create a transition request to staging and then approve the request
-transition_request_body = {'name': model_name, 'version': 1, 'stage': 'Staging'}
+transition_request_body = {'name': model_name, 'version': 4, 'stage': 'Staging'}
 mlflow_call_endpoint('transition-requests/create', 'POST', json.dumps(transition_request_body))
-transition_request_body = {'name': model_name, 'version': 1, 'stage': 'Staging', 'archive_existing_versions': 'true'}
 
 
 # COMMAND ----------
 
+transition_request_body = {'name': model_name, 'version': 7, 'stage': 'Staging', 'archive_existing_versions': 'true'}
 mlflow_call_endpoint('transition-requests/approve', 'POST', json.dumps(transition_request_body))
 
 # COMMAND ----------

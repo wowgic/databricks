@@ -30,7 +30,7 @@ model_name = "mlops_demo_predict_stu_per"
 from mlflow.store.artifact.models_artifact_repo import ModelsArtifactRepository
 import os
 
-model_uri = f"models:/{model_name}/3"
+model_uri = f"models:/{model_name}/Staging"
 local_path = ModelsArtifactRepository(model_uri).download_artifacts("") # download model from remote registry
 
 requirements_path = os.path.join(local_path, "requirements.txt")
@@ -73,7 +73,7 @@ display(table)
 import mlflow
 from pyspark.sql.functions import struct
 
-model_uri = f"models:/{model_name}/3"
+model_uri = f"models:/{model_name}/Staging"
 
 # create spark user-defined function for model prediction
 predict = mlflow.pyfunc.spark_udf(spark, model_uri, result_type="string")
@@ -112,4 +112,5 @@ output_df.display()
 
 # COMMAND ----------
 
-
+#write to delta table for further visualization
+output_df.write.format("delta").mode("append").saveAsTable("default.student_per_preds")
