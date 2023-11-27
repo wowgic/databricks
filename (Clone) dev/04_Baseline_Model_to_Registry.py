@@ -17,7 +17,7 @@
 # COMMAND ----------
 
 #Let's get our last auto ml run. This is specific to the demo, it just gets the experiment ID of the last Auto ML run.
-experiment_id = '802245372688280'
+experiment_id = '2628671495089050'
  
 best_model = mlflow.search_runs(experiment_ids=[experiment_id], order_by=["metrics.val_f1_score DESC"], max_results=1, filter_string="status = 'FINISHED'")
 best_model

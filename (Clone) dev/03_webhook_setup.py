@@ -88,7 +88,7 @@ TOKEN = 'dapia7ea79e2d7c1aba7e19826b75ce384c2-3'
 DOGFOOD_URL = 'https://adb-8979854987478940.0.azuredatabricks.net'
 model_name = 'mlops_demo_predict_stu_per'
 job_id = 898125460839212 # INSERT ID OF PRE-DEFINED JOB
-slack_url = 'https://hooks.slack.com/services/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' # can also use custom URL endpoint here
+slack_url = 'https://hooks.slack.com/services/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' # can also use custom URL endpoint here
 
 # COMMAND ----------
 
